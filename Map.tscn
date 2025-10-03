@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://igldn6e3nqf8"]
+
+[ext_resource type="Material" uid="uid://bcii431yxr064" path="res://Black_smallgrid.tres" id="1_3h1ab"]
+[ext_resource type="Texture2D" uid="uid://donk0thdiyipu" path="res://PNG/Dark/texture_09.png" id="2_7if1s"]
+[ext_resource type="PackedScene" uid="uid://du2fsgocue470" path="res://PNG/Light/stairs-split.glb" id="3_v6avs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qak7"]
+albedo_texture = ExtResource("2_7if1s")
+
+[node name="CsgFloor" type="Node3D"]
+
+[node name="แมพ" type="CSGCombiner3D" parent="."]
+
+[node name="ทางเสร็จ" type="CSGCombiner3D" parent="แมพ"]
+
+[node name="ทางยาว" type="CSGBox3D" parent="แมพ/ทางเสร็จ"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0146484375, 3.4721365, 2.5289307)
+visible = false
+size = Vector3(59.970703, 9.906311, 9.942139)
+material = ExtResource("1_3h1ab")
+
+[node name="รูทางยาว" type="CSGBox3D" parent="แมพ/ทางเสร็จ"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01184082, 3.9897938, 2.496338)
+visible = false
+material_override = SubResource("StandardMaterial3D_8qak7")
+operation = 2
+size = Vector3(57.97632, 9.040527, 8.007324)
+material = ExtResource("1_3h1ab")
+
+[node name="ทางเลี้ยว" type="CSGBox3D" parent="แมพ/ทางเสร็จ"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.604017, 3.4950256, 13.420036)
+size = Vector3(10.748779, 9.853455, 13.687134)
+material = ExtResource("1_3h1ab")
+
+[node name="รูทางเลี้ยว" type="CSGBox3D" parent="แมพ/ทางเสร็จ"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.538864, 3.9562268, 12.957032)
+operation = 2
+size = Vector3(8.899977, 8.940506, 12.918929)
+material = ExtResource("1_3h1ab")
+
+[node name="ทางเสร็จ2" type="CSGCombiner3D" parent="แมพ"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.12313, 0, 12.654484)
+
+[node name="ทางยาว" type="CSGBox3D" parent="แมพ/ทางเสร็จ2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4721365, 2.6606903)
+size = Vector3(60, 9.906311, 9.890015)
+material = ExtResource("1_3h1ab")
+
+[node name="รูทางยาว" type="CSGBox3D" parent="แมพ/ทางเสร็จ2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9897938, 2.7596436)
+material_override = SubResource("StandardMaterial3D_8qak7")
+operation = 2
+size = Vector3(58, 9.040527, 8.118408)
+material = ExtResource("1_3h1ab")
+
+[node name="ทางเลี้ยว" type="CSGBox3D" parent="แมพ/ทางเสร็จ2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.604017, 3.4950256, 13.38018)
+size = Vector3(10.748779, 9.853455, 13.766846)
+material = ExtResource("1_3h1ab")
+
+[node name="รูทางเลี้ยว" type="CSGBox3D" parent="แมพ/ทางเสร็จ2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.542162, 3.9473991, 12.909372)
+operation = 2
+size = Vector3(8.913677, 8.95816, 12.997917)
+material = ExtResource("1_3h1ab")
+
+[node name="ทางเสร็จ3" type="CSGCombiner3D" parent="แมพ"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -118.15277, 0, 25.61063)
+
+[node name="ทางยาว" type="CSGBox3D" parent="แมพ/ทางเสร็จ3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4721365, 2.3421516)
+size = Vector3(60, 9.906311, 9.942139)
+material = ExtResource("1_3h1ab")
+
+[node name="รูทางยาว" type="CSGBox3D" parent="แมพ/ทางเสร็จ3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9897938, 2.450325)
+material_override = SubResource("StandardMaterial3D_8qak7")
+operation = 2
+size = Vector3(58, 9.040527, 8.136185)
+material = ExtResource("1_3h1ab")
+
+[node name="ทางเลี้ยว" type="CSGBox3D" parent="แมพ/ทางเสร็จ3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.604017, 3.4950256, 13.38018)
+size = Vector3(10.748779, 9.853455, 13.766846)
+material = ExtResource("1_3h1ab")
+
+[node name="รูทางเลี้ยว" type="CSGBox3D" parent="แมพ/ทางเสร็จ3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.542162, 3.9473991, 12.909372)
+operation = 2
+size = Vector3(8.913677, 8.95816, 12.997917)
+material = ExtResource("1_3h1ab")
+
+[node name="รูเชื่อมทาง" type="CSGBox3D" parent="แมพ"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.550999, 3.9702148, 15.358324)
+operation = 2
+size = Vector3(1.2137451, 8.94043, 8.075073)
+material = ExtResource("1_3h1ab")
+
+[node name="รูเชื่อมทาง2" type="CSGBox3D" parent="แมพ"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.65135, 3.9898958, 28.071749)
+operation = 2
+size = Vector3(1.2137451, 9.041992, 7.9979477)
+material = ExtResource("1_3h1ab")
+
+[node name="stairs-split" parent="." instance=ExtResource("3_v6avs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.573124, 0, -13.383295)

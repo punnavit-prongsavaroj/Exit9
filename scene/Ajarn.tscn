@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d27b2akktodgg"]
+
+[ext_resource type="PackedScene" uid="uid://bfclp2psybj2k" path="res://asset/teacherkumronglbtoscene.tscn" id="1_kdf2s"]
+
+[node name="Aj" type="Node3D"]
+
+[node name="teacherkumronfull" parent="." instance=ExtResource("1_kdf2s")]

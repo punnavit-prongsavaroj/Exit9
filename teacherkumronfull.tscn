@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cra8nncqkgkh3"]
+
+[ext_resource type="PackedScene" uid="uid://dema0i5qfu3l5" path="res://teacherkumronfull.glb" id="1_ucjg4"]
+
+[node name="teacherkumronfull" instance=ExtResource("1_ucjg4")]

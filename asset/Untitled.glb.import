@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ccen7eb4cdmmg"
-path="res://.godot/imported/stairs-split.glb-bd62d326117c9061f68ee3c1d0f715fa.scn"
+uid="uid://4h2vlv8wc6ks"
+path="res://.godot/imported/Untitled.glb-f82b49a92c49be83e46a24e1a04ef3a3.scn"
 
 [deps]
 
-source_file="res://asset/PNG/Purple/stairs-split.glb"
-dest_files=["res://.godot/imported/stairs-split.glb-bd62d326117c9061f68ee3c1d0f715fa.scn"]
+source_file="res://asset/Untitled.glb"
+dest_files=["res://.godot/imported/Untitled.glb-f82b49a92c49be83e46a24e1a04ef3a3.scn"]
 
 [params]
 
@@ -33,5 +33,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=2
+gltf/naming_version=1
 gltf/embedded_image_handling=1

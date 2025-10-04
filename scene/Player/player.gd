@@ -7,7 +7,7 @@ const JUMP_VELOCITY = 4.5
 @onready var head = $head
 @onready var camera = $head/Camera3D
 
-var mousesentivity = 0.015
+var mousesentivity = 0.01
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

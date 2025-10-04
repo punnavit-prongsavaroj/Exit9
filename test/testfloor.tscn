@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://k8nni2o2sb68"]
+
+[ext_resource type="Script" uid="uid://c82mxrhihdhwj" path="res://test/testfloor.gd" id="1_wye3f"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hw3hg"]
+size = Vector2(4.255, 32.875)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wye3f"]
+size = Vector3(4.36522, 0.0144043, 33.2079)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hw3hg"]
+size = Vector3(3.86841, 4.98096, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wye3f"]
+
+[node name="Testfloor" type="StaticBody3D"]
+script = ExtResource("1_wye3f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_hw3hg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0260233, 0.0025053, -0.0511851)
+shape = SubResource("BoxShape3D_wye3f")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.13686)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125122, 1.99048, -14.8011)
+shape = SubResource("BoxShape3D_hw3hg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59067, 0.738715, -15.4182)
+mesh = SubResource("BoxMesh_wye3f")
+
+[node name="del" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.80121)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="del"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125122, 1.99048, -14.8011)
+shape = SubResource("BoxShape3D_hw3hg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="del"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59067, 0.738715, -15.4182)
+mesh = SubResource("BoxMesh_wye3f")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="del" to="." method="_on_del_body_entered"]

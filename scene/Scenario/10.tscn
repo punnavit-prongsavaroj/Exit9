@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://ds2f8cjnn3n2j"]
+[gd_scene load_steps=18 format=3 uid="uid://b6xma4am70xdp"]
 
-[ext_resource type="PackedScene" uid="uid://vrvolxvx6jpt" path="res://scene/hallway-split.glb" id="1_1m8ei"]
-[ext_resource type="PackedScene" uid="uid://dvak0s01m82hr" path="res://students_table.glb" id="2_j0n8k"]
-[ext_resource type="PackedScene" uid="uid://clrrxjo78c3lv" path="res://students_chair.glb" id="3_bgqyc"]
-[ext_resource type="Texture2D" uid="uid://bfsk2blaacril" path="res://272834936_3204005819882939_2349462973584557040_n.jpg" id="4_xe83j"]
+[ext_resource type="Script" uid="uid://bj27xo4jub6s1" path="res://scene/Scenario/map.gd" id="1_3falm"]
+[ext_resource type="PackedScene" uid="uid://vrvolxvx6jpt" path="res://scene/hallway-split.glb" id="1_cmpuo"]
+[ext_resource type="PackedScene" uid="uid://dvak0s01m82hr" path="res://students_table.glb" id="2_550ar"]
+[ext_resource type="PackedScene" uid="uid://clrrxjo78c3lv" path="res://students_chair.glb" id="3_06mld"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_im7a4"]
 size = Vector3(0.941376, 0.831161, 1.72375)
@@ -32,32 +32,37 @@ size = Vector3(13.2117, 3.51953, 0.212524)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bpio5"]
 size = Vector3(10.9198, 3.18976, 0.573151)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7ogq1"]
-size = Vector3(1.01843, 1.98779, 1.99908)
+[sub_resource type="BoxShape3D" id="BoxShape3D_cq5tt"]
+size = Vector3(6.16479, 4.19629, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4n4ff"]
-albedo_texture = ExtResource("4_xe83j")
+[sub_resource type="BoxShape3D" id="BoxShape3D_22ug0"]
+size = Vector3(30.745, 11.6172, 8.16162)
 
-[sub_resource type="BoxMesh" id="BoxMesh_6afsh"]
-material = SubResource("StandardMaterial3D_4n4ff")
-size = Vector3(1, 2, 2)
+[sub_resource type="BoxShape3D" id="BoxShape3D_3falm"]
+size = Vector3(1, 15.7919, 12.2754)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ex1rw"]
+size = Vector3(1, 5.85242, 6.99274)
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.926, 0, 0.832)
+script = ExtResource("1_3falm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="hallway-split" parent="StaticBody3D" instance=ExtResource("1_1m8ei")]
+[node name="hallway-split" parent="StaticBody3D" instance=ExtResource("1_cmpuo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.5783, 0, -14.1164)
 
 [node name="รวม" type="StaticBody3D" parent="StaticBody3D/hallway-split"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.37059)
 
-[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม" instance=ExtResource("2_j0n8k")]
+[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม" instance=ExtResource("2_550ar")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 48.9494, 0.00675257, 42.2004)
 
-[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514439, -0.00949523, -0.758282)
 
-[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514973, 0.00102985, -0.015686)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/hallway-split/รวม"]
@@ -67,13 +72,13 @@ shape = SubResource("BoxShape3D_im7a4")
 [node name="รวม2" type="StaticBody3D" parent="StaticBody3D/hallway-split"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3218, 0, 0)
 
-[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม2" instance=ExtResource("2_j0n8k")]
+[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม2" instance=ExtResource("2_550ar")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 48.9494, 0.00675257, 42.2004)
 
-[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม2/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม2/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514439, -0.00949523, -0.758282)
 
-[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม2/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม2/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514973, 0.00102985, -0.015686)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/hallway-split/รวม2"]
@@ -83,13 +88,13 @@ shape = SubResource("BoxShape3D_im7a4")
 [node name="รวม3" type="StaticBody3D" parent="StaticBody3D/hallway-split"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3456, 0, 0)
 
-[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม3" instance=ExtResource("2_j0n8k")]
+[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม3" instance=ExtResource("2_550ar")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 48.9494, 0.00675257, 42.2004)
 
-[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม3/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม3/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514439, -0.00949523, -0.758282)
 
-[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม3/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม3/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514973, 0.00102985, -0.015686)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/hallway-split/รวม3"]
@@ -99,13 +104,13 @@ shape = SubResource("BoxShape3D_im7a4")
 [node name="รวม4" type="StaticBody3D" parent="StaticBody3D/hallway-split"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3456, 0, -5.52137)
 
-[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม4" instance=ExtResource("2_j0n8k")]
+[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม4" instance=ExtResource("2_550ar")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 48.9494, 0.00675257, 42.2004)
 
-[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม4/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม4/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514439, -0.00949523, -0.758282)
 
-[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม4/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม4/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514973, 0.00102985, -0.015686)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/hallway-split/รวม4"]
@@ -115,13 +120,13 @@ shape = SubResource("BoxShape3D_im7a4")
 [node name="รวม5" type="StaticBody3D" parent="StaticBody3D/hallway-split"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3456, 0, -10.5622)
 
-[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม5" instance=ExtResource("2_j0n8k")]
+[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม5" instance=ExtResource("2_550ar")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 48.9494, 0.00675257, 42.2004)
 
-[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม5/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม5/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514439, -0.00949523, -0.758282)
 
-[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม5/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม5/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514973, 0.00102985, -0.015686)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/hallway-split/รวม5"]
@@ -131,13 +136,13 @@ shape = SubResource("BoxShape3D_im7a4")
 [node name="รวม6" type="StaticBody3D" parent="StaticBody3D/hallway-split"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3456, 0, -16.0145)
 
-[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม6" instance=ExtResource("2_j0n8k")]
+[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม6" instance=ExtResource("2_550ar")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 48.9494, 0.00675257, 42.2004)
 
-[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม6/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม6/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514439, -0.00949523, -0.758282)
 
-[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม6/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม6/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514973, 0.00102985, -0.015686)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/hallway-split/รวม6"]
@@ -147,13 +152,13 @@ shape = SubResource("BoxShape3D_im7a4")
 [node name="รวม7" type="StaticBody3D" parent="StaticBody3D/hallway-split"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3456, 0, -20.7414)
 
-[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม7" instance=ExtResource("2_j0n8k")]
+[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม7" instance=ExtResource("2_550ar")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 48.9494, 0.00675257, 42.2004)
 
-[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม7/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม7/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514439, -0.00949523, -0.758282)
 
-[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม7/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม7/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514973, 0.00102985, -0.015686)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/hallway-split/รวม7"]
@@ -163,13 +168,13 @@ shape = SubResource("BoxShape3D_im7a4")
 [node name="รวม8" type="StaticBody3D" parent="StaticBody3D/hallway-split"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3456, 0, -26.0218)
 
-[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม8" instance=ExtResource("2_j0n8k")]
+[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม8" instance=ExtResource("2_550ar")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 48.9494, 0.00675257, 42.2004)
 
-[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม8/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม8/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514439, -0.00949523, -0.758282)
 
-[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม8/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม8/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514973, 0.00102985, -0.015686)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/hallway-split/รวม8"]
@@ -179,13 +184,13 @@ shape = SubResource("BoxShape3D_im7a4")
 [node name="รวม9" type="StaticBody3D" parent="StaticBody3D/hallway-split"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3456, 0, -31.4875)
 
-[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม9" instance=ExtResource("2_j0n8k")]
+[node name="โต๊ะ" parent="StaticBody3D/hallway-split/รวม9" instance=ExtResource("2_550ar")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 48.9494, 0.00675257, 42.2004)
 
-[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม9/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ซ้าย" parent="StaticBody3D/hallway-split/รวม9/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514439, -0.00949523, -0.758282)
 
-[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม9/โต๊ะ" instance=ExtResource("3_bgqyc")]
+[node name="เก้าอี้ขวา" parent="StaticBody3D/hallway-split/รวม9/โต๊ะ" instance=ExtResource("3_06mld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514973, 0.00102985, -0.015686)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/hallway-split/รวม9"]
@@ -228,13 +233,31 @@ shape = SubResource("BoxShape3D_0cgoo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.29043, 1.50477, 27.6608)
 shape = SubResource("BoxShape3D_bpio5")
 
-[node name="Camp" type="StaticBody3D" parent="StaticBody3D"]
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6188, 1.59815, -26.7288)
+shape = SubResource("BoxShape3D_cq5tt")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Camp"]
-transform = Transform3D(0.99892, 0.0463738, 0, -0.0463738, 0.99892, 0, 0, 0, 1, 10.3058, 1.69086, -25.6294)
-shape = SubResource("BoxShape3D_7ogq1")
+[node name="create" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63759, 0, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="StaticBody3D/Camp"]
-transform = Transform3D(0.998924, 0.0463741, 0, -0.0463741, 0.998924, 0, 0, 0, 1, 10.2964, 1.68666, -25.627)
-mesh = SubResource("BoxMesh_6afsh")
-skeleton = NodePath("../..")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="create"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8725, 5.30859, 3.25418)
+shape = SubResource("BoxShape3D_22ug0")
+
+[node name="next" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00105, -9.53674e-07, -19.1047)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="next"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.273814, 7.39594, -7.06061)
+shape = SubResource("BoxShape3D_3falm")
+
+[node name="back" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.61285, 0, 30.0744)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.42621, -0.0675354)
+shape = SubResource("BoxShape3D_ex1rw")
+
+[connection signal="body_entered" from="create" to="." method="_on_create_body_entered"]
+[connection signal="body_entered" from="next" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="back" to="." method="_on_back_body_entered"]

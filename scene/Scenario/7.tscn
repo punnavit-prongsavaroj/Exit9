@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://ds2f8cjnn3n2j"]
+[gd_scene load_steps=20 format=3 uid="uid://ds2f8cjnn3n2j"]
 
 [ext_resource type="PackedScene" uid="uid://vrvolxvx6jpt" path="res://scene/hallway-split.glb" id="1_1m8ei"]
 [ext_resource type="Script" uid="uid://bj27xo4jub6s1" path="res://scene/Scenario/map.gd" id="1_ac4us"]
 [ext_resource type="PackedScene" uid="uid://dvak0s01m82hr" path="res://students_table.glb" id="2_j0n8k"]
 [ext_resource type="PackedScene" uid="uid://clrrxjo78c3lv" path="res://students_chair.glb" id="3_bgqyc"]
-[ext_resource type="Texture2D" uid="uid://bfsk2blaacril" path="res://272834936_3204005819882939_2349462973584557040_n.jpg" id="4_xe83j"]
+[ext_resource type="PackedScene" uid="uid://bfclp2psybj2k" path="res://asset/teacherkumronglbtoscene.tscn" id="5_nwb8t"]
+[ext_resource type="Script" uid="uid://bswpaloqroaym" path="res://asset/teacherkumronglbtoscene.gd" id="6_qu2au"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_im7a4"]
 size = Vector3(0.941376, 0.831161, 1.72375)
@@ -33,21 +34,11 @@ size = Vector3(13.2117, 3.51953, 0.212524)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bpio5"]
 size = Vector3(10.9198, 3.18976, 0.573151)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7ogq1"]
-size = Vector3(1.01843, 1.98779, 1.99908)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4n4ff"]
-albedo_texture = ExtResource("4_xe83j")
-
-[sub_resource type="BoxMesh" id="BoxMesh_6afsh"]
-material = SubResource("StandardMaterial3D_4n4ff")
-size = Vector3(1, 2, 2)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_nwb8t"]
 size = Vector3(6.16479, 4.19629, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tjg24"]
-size = Vector3(30.745, 11.6172, 8.16162)
+size = Vector3(30.745, 11.6172, 51.7899)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ac4us"]
 size = Vector3(1, 15.7919, 12.2754)
@@ -243,17 +234,6 @@ shape = SubResource("BoxShape3D_0cgoo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.29043, 1.50477, 27.6608)
 shape = SubResource("BoxShape3D_bpio5")
 
-[node name="Camp" type="StaticBody3D" parent="StaticBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Camp"]
-transform = Transform3D(0.99892, 0.0463738, 0, -0.0463738, 0.99892, 0, 0, 0, 1, 10.3058, 1.69086, -25.6294)
-shape = SubResource("BoxShape3D_7ogq1")
-
-[node name="Mesh" type="MeshInstance3D" parent="StaticBody3D/Camp"]
-transform = Transform3D(0.998924, 0.0463741, 0, -0.0463741, 0.998924, 0, 0, 0, 1, 10.2964, 1.68666, -25.627)
-mesh = SubResource("BoxMesh_6afsh")
-skeleton = NodePath("../..")
-
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6188, 1.59815, -26.7288)
 shape = SubResource("BoxShape3D_nwb8t")
@@ -262,7 +242,7 @@ shape = SubResource("BoxShape3D_nwb8t")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4958, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="create"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8725, 5.30859, 3.25418)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8725, 5.30859, 1.26929)
 shape = SubResource("BoxShape3D_tjg24")
 
 [node name="next" type="Area3D" parent="."]
@@ -278,6 +258,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.61285, 0, 30.0744)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.42621, -0.0675354)
 shape = SubResource("BoxShape3D_qu2au")
+
+[node name="teacherkumronfull" parent="." instance=ExtResource("5_nwb8t")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 14.527, 0, -26.3926)
+script = ExtResource("6_qu2au")
 
 [connection signal="body_entered" from="create" to="." method="_on_create_body_entered"]
 [connection signal="body_entered" from="next" to="." method="_on_area_3d_body_entered"]

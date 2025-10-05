@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://smc1ftib7g2f"]
+[gd_scene load_steps=19 format=3 uid="uid://smc1ftib7g2f"]
 
 [ext_resource type="Script" uid="uid://bj27xo4jub6s1" path="res://scene/Scenario/map.gd" id="1_5q13f"]
 [ext_resource type="PackedScene" uid="uid://vrvolxvx6jpt" path="res://scene/hallway-split.glb" id="1_im7a4"]
 [ext_resource type="PackedScene" uid="uid://dvak0s01m82hr" path="res://students_table.glb" id="2_70gc7"]
 [ext_resource type="PackedScene" uid="uid://clrrxjo78c3lv" path="res://students_chair.glb" id="3_cunvk"]
+[ext_resource type="PackedScene" uid="uid://bfclp2psybj2k" path="res://asset/teacherkumronglbtoscene.tscn" id="5_nbs27"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_im7a4"]
 size = Vector3(0.941376, 0.831161, 1.72375)
@@ -36,7 +37,7 @@ size = Vector3(10.9198, 3.18976, 0.573151)
 size = Vector3(6.16479, 4.19629, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4s2c6"]
-size = Vector3(30.745, 11.6172, 8.16162)
+size = Vector3(30.745, 11.6172, 50.7977)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5q13f"]
 size = Vector3(1, 15.7919, 12.2754)
@@ -239,7 +240,7 @@ shape = SubResource("BoxShape3D_fkk8a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.94683, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="create"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8725, 5.30859, 3.25418)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8725, 5.30859, 1.35434)
 shape = SubResource("BoxShape3D_4s2c6")
 
 [node name="next" type="Area3D" parent="."]
@@ -257,5 +258,8 @@ monitoring = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.42621, -0.0675354)
 shape = SubResource("BoxShape3D_nbs27")
+
+[node name="teacherkumronfull" parent="." instance=ExtResource("5_nbs27")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 14.527, 0, -26.3926)
 
 [connection signal="body_entered" from="create" to="." method="_on_create_body_entered"]

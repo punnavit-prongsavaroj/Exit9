@@ -1,7 +1,7 @@
 extends Node3D
 
 var level = 0
-
+var swap = true
 func clear_maps_except(except_map: Node):
 	print("Clear on")
 	for child in get_children():
@@ -14,3 +14,7 @@ func set_level(x: int):
 
 func get_level():
 	return level
+	
+func toggle_swap():
+	swap = !swap
+	print("swap:", swap)

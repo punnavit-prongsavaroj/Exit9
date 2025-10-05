@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://drgpke03ulrkd"]
+[gd_scene load_steps=19 format=3 uid="uid://drgpke03ulrkd"]
 
 [ext_resource type="Script" uid="uid://bj27xo4jub6s1" path="res://scene/Scenario/map.gd" id="1_gkctw"]
 [ext_resource type="PackedScene" uid="uid://vrvolxvx6jpt" path="res://scene/hallway-split.glb" id="1_qggho"]
 [ext_resource type="PackedScene" uid="uid://dvak0s01m82hr" path="res://students_table.glb" id="2_ohpuy"]
 [ext_resource type="PackedScene" uid="uid://clrrxjo78c3lv" path="res://students_chair.glb" id="3_jxtuj"]
 [ext_resource type="PackedScene" uid="uid://bfclp2psybj2k" path="res://asset/teacherkumronglbtoscene.tscn" id="5_j6hf5"]
-[ext_resource type="Script" uid="uid://bswpaloqroaym" path="res://asset/teacherkumronglbtoscene.gd" id="6_83ote"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_im7a4"]
 size = Vector3(0.941376, 0.831161, 1.72375)
@@ -248,7 +247,6 @@ shape = SubResource("BoxShape3D_gkctw")
 
 [node name="teacherkumronfull" parent="." instance=ExtResource("5_j6hf5")]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 14.7575, 0, -26.3926)
-script = ExtResource("6_83ote")
 
 [node name="back" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.61285, 0, 30.0744)

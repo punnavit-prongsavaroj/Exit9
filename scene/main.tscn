@@ -21,3 +21,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.7130
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_wp4xf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.09913, 1.2492, 31.2375)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 120.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="Map" method="_on_timer_timeout"]

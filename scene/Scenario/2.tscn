@@ -280,6 +280,41 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.020
 light_energy = 16.0
 spot_range = 8.0
 
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.0203, 5.39983, 30.4018)
+light_energy = 16.0
+spot_range = 8.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.0203, 5.39983, 19.6885)
+light_energy = 16.0
+spot_range = 8.0
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.0203, 5.39983, -1.91671)
+light_energy = 16.0
+spot_range = 8.0
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.0203, 5.39983, -10.1718)
+light_energy = 16.0
+spot_range = 8.0
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.0203, 5.39983, -20.6236)
+light_energy = 16.0
+spot_range = 8.0
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.82745, 5.39983, -25.5158)
+light_energy = 16.0
+spot_range = 8.0
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.82745, 5.39983, 30.6403)
+light_energy = 16.0
+spot_range = 8.0
+
 [connection signal="body_entered" from="create" to="." method="_on_create_body_entered"]
 [connection signal="body_entered" from="next" to="." method="_on_next_body_entered"]
 [connection signal="body_entered" from="back" to="." method="_on_back_body_entered"]

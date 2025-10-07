@@ -43,4 +43,9 @@ scale = Vector2(1.26133, 1.28203)
 text = "EXIT9"
 label_settings = SubResource("LabelSettings_e012f")
 
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.941981, -0.335665, 0, 0.335665, 0.941981, 0.774216, -22.2469, 71.9597)
+light_energy = 16.0
+spot_range = 56.343
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

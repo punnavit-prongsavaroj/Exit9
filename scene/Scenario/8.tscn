@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7orf4jdu2dnh"]
+[gd_scene load_steps=20 format=3 uid="uid://c7orf4jdu2dnh"]
 
 [ext_resource type="PackedScene" uid="uid://vrvolxvx6jpt" path="res://scene/hallway-split.glb" id="1_048vf"]
 [ext_resource type="Script" uid="uid://bj27xo4jub6s1" path="res://scene/Scenario/map.gd" id="1_hpxaj"]
@@ -44,6 +44,8 @@ size = Vector3(1, 15.7919, 12.2754)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hs75y"]
 size = Vector3(1, 5.85242, 6.99274)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0wuk4"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.926, 0, 0.832)
@@ -257,6 +259,10 @@ shape = SubResource("BoxShape3D_hs75y")
 
 [node name="teacherkumronfull" parent="." instance=ExtResource("5_hs75y")]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 14.527, 0, -26.3926)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.60829, 0, 0, 0, 6.12638, 0, 0, 0, 0.416938, 13.7159, 9.53674e-07, -26.8731)
+mesh = SubResource("BoxMesh_0wuk4")
 
 [connection signal="body_entered" from="create" to="." method="_on_create_body_entered"]
 [connection signal="body_entered" from="next" to="." method="_on_area_3d_body_entered"]

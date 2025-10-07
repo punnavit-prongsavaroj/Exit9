@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://tg18iw88pgw2"]
+[gd_scene load_steps=6 format=3 uid="uid://tg18iw88pgw2"]
 
 [ext_resource type="Script" uid="uid://bvpmn8kt1jsc5" path="res://scene/map.gd" id="1_0ha60"]
 [ext_resource type="PackedScene" uid="uid://smc1ftib7g2f" path="res://scene/Scenario/1.tscn" id="1_v0l8b"]
 [ext_resource type="PackedScene" uid="uid://bgmmd0dsexesa" path="res://scene/Scenario/2.tscn" id="2_brvut"]
 [ext_resource type="PackedScene" uid="uid://clh68qtmugfix" path="res://scene/Player/Player.tscn" id="2_wp4xf"]
+[ext_resource type="Script" uid="uid://dgg121ckay46d" path="res://scene/label.gd" id="5_0ha60"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -25,5 +26,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.09913, 1.2492, 31.2375)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 120.0
 autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 27.0
+offset_top = 16.0
+offset_right = 348.0
+offset_bottom = 170.0
+text = "LEVEL 1"
+script = ExtResource("5_0ha60")
 
 [connection signal="timeout" from="Timer" to="Map" method="_on_timer_timeout"]

@@ -19,3 +19,5 @@ shape = SubResource("CapsuleShape3D_tok1r")
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.604534, -0.483729)
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmh5os4kn6v37"]
+[gd_scene load_steps=8 format=3 uid="uid://cmh5os4kn6v37"]
 
 [ext_resource type="PackedScene" uid="uid://dema0i5qfu3l5" path="res://asset/teacherkumronfull.glb" id="1_b1ch5"]
 [ext_resource type="Script" uid="uid://conp5bnftvnif" path="res://scene/Scenario/menu.gd" id="1_h5qt1"]
 [ext_resource type="Texture2D" uid="uid://cjdkqaf1rtjw1" path="res://33caa17fe3097a7d166c2e0ac3f815d5.jpeg" id="2_h5qt1"]
+[ext_resource type="FontFile" uid="uid://catcwq2lt5pu5" path="res://asset/THSarabunNew.ttf" id="4_e012f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5qt1"]
 albedo_texture = ExtResource("2_h5qt1")
@@ -27,18 +28,32 @@ transform = Transform3D(200, 0, 0, 0, -8.74228e-06, -200, 0, 200, -8.74228e-06, 
 mesh = SubResource("PlaneMesh_h5qt1")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 456.0
-offset_top = 355.0
-offset_right = 464.0
-offset_bottom = 363.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = 23.0
+offset_right = -36.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(3.38033, 3.28314)
 text = "START"
 
 [node name="Label" type="Label" parent="."]
-offset_left = 407.0
-offset_top = 62.0
-offset_right = 643.0
-offset_bottom = 186.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -180.0
+offset_right = 87.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.26133, 1.28203)
 text = "EXIT9"
 label_settings = SubResource("LabelSettings_e012f")
@@ -47,5 +62,23 @@ label_settings = SubResource("LabelSettings_e012f")
 transform = Transform3D(1, 0, 0, 0, 0.941981, -0.335665, 0, 0.335665, 0.941981, 0.774216, -22.2469, 71.9597)
 light_energy = 16.0
 spot_range = 56.343
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -221.0
+offset_top = -135.0
+offset_right = 249.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_e012f")
+theme_override_font_sizes/font_size = 47
+text = "เดินหา Anomaly(สิ่งผิดปกติ) ในฉาก โดยถ้า ในฉากถ้ามีสิ่งผิดปกติ
+ต้องเดินกลับไปทางเดิม แต่ถ้า ในฉากไม่มีสิ่งผิดปกติต้องเดินไปอีกฝั่ง
+"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

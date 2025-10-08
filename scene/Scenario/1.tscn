@@ -243,7 +243,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6188, 1.59815, -26.7288)
 shape = SubResource("BoxShape3D_fkk8a")
 
 [node name="create" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.94683, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9451, -0.00532436, 0.01157)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="create"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8725, 5.30859, 1.35434)
